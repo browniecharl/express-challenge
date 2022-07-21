@@ -1,4 +1,4 @@
-// const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -61,6 +61,6 @@ app.delete("/api/notes/:id", (req, res) => {
   res.json(currentNote);
 });
 
-app.listen(3001, () => {
-  console.log(`Now running server on port 3001`);
+app.listen(PORT, () => {
+  console.log(`Now running server on port ${PORT}`);
 });
