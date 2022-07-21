@@ -43,6 +43,24 @@ app.post("/api/notes", (req, res) => {
   res.json(currentNote);
 });
 
+app.delete("/api/notes/:id", (req, res) => {
+  let currentNote = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  let noteID = req.params.id;
+  let newNoteID = 0;
+
+  currentNote = currentNote.filter((theNote) => {
+    return theNote.id != noteID;
+  });
+
+  for (theNote of currentNote) {
+    theNote.id = newNoteID.toString();
+    newNoteID++;
+  }
+
+  fs.writeFileSync("./db/db.json", JSON.stringify(currentNote));
+  res.json(currentNote);
+});
+
 app.listen(3001, () => {
   console.log(`Now running server on port 3001`);
 });
