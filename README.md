@@ -1,8 +1,8 @@
-# Note Taker Starter Code
+# Note-Taker-Challenge
 
 ## Description:
 
-This is an application was inspired to allow users to organize their thoughts and keep track of any tasks they need to complete.
+This is an application that was inspired to allow users to organize their thoughts and keep track of any tasks they need to complete.
 
 ## Built With
 
